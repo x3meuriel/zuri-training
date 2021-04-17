@@ -5,11 +5,11 @@ const fs = require('fs')
 
 
 
-const post = ()=> {fetch('https://jsonplaceholder.typicode.com/users')
+const users = ()=> {fetch('https://jsonplaceholder.typicode.com/users')
 .then(resp => resp.json())
 .then(
     data =>{ 
-            fs.writeFile('./hello.txt', JSON.stringify(data), (err)=>{
+            fs.writeFile('./users.json', JSON.stringify(data), (err)=>{
                 if(err==!null){
                    console.log(err, 'err') 
                 }
@@ -19,4 +19,4 @@ const post = ()=> {fetch('https://jsonplaceholder.typicode.com/users')
 )
 }
 
-post();
+users();
