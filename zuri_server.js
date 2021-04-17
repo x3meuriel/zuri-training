@@ -5,18 +5,18 @@ const fs = require('fs')
 
 
 
-const users = ()=> {fetch('https://jsonplaceholder.typicode.com/users')
+const posts = ()=> {fetch('https://jsonplaceholder.typicode.com/posts')
 .then(resp => resp.json())
 .then(
     data =>{ 
-            fs.writeFile('./users.json', JSON.stringify(data), (err)=>{
+            fs.writeFile('./result/posts.json', JSON.stringify(data), (err)=>{
                 if(err==!null){
                    console.log(err, 'err') 
                 }
-                console.log('data has been written into hello.txt')
+                console.log('data has been written into posts.json file')
             })
         }
 )
 }
 
-users();
+posts();
